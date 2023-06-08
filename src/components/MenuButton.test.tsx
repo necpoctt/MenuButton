@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import MenuButton from './MenuButton';
 import { TonicProvider } from '@tonic-ui/react';
 
@@ -7,8 +7,7 @@ test('render MenuButton', () => {
 		<TonicProvider
 			colorMode={{
 				defaultValue: 'dark',
-			}}
-		>
+			}}>
 			<div className="container">
 				<MenuButton data-testid="test" />
 			</div>
@@ -23,8 +22,7 @@ test('render MenuButton open menu', async () => {
 		<TonicProvider
 			colorMode={{
 				defaultValue: 'dark',
-			}}
-		>
+			}}>
 			<div className="container">
 				<MenuButton />
 			</div>
