@@ -16,28 +16,26 @@ import Avatar from './Avatar';
 const MenuButton = (props: any) => {
 	const [colorMode] = useColorMode();
 	const [colorStyle]: any = useColorStyle({ colorMode });
-	const [menuState, setMenuState] = useState('main');
+	const [isOpen, setIsOpen] = useState(false);
 
 	return (
 		<Menu
 			onOpen={() => {
-				setMenuState('main');
+				setIsOpen(true);
 			}}
-			{...props}
-		>
+			{...props}>
 			<MenuToggle>
 				<Avatar
 					backgroundColor={colorStyle.background.secondary}
 					color={colorStyle.color.secondary}
 					_hover={{
 						color: colorStyle.color.primary,
-					}}
-				>
+					}}>
 					<Icon icon="user-team" size="5x" />
 				</Avatar>
 			</MenuToggle>
 			<MenuList width="max-content">
-				<Box display={menuState === 'main' ? 'block' : 'none'}>
+				<Box display={isOpen ? 'block' : 'none'}>
 					<MenuItem>
 						<Flex flex="none" mr="3x">
 							<Icon icon="settings" />
