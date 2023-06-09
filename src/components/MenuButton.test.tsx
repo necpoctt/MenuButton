@@ -17,7 +17,7 @@ test('render MenuButton', () => {
 	expect(ele).toBeInTheDocument();
 });
 
-test('render MenuButton open menu', async () => {
+test('render MenuButton open menu', () => {
 	render(
 		<TonicProvider
 			colorMode={{
